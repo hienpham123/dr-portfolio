@@ -3,8 +3,10 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { X, MessageCircle, Send, Stethoscope } from 'lucide-react'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function ChatWidget() {
+  const { t } = useLanguage()
   const [isOpen, setIsOpen] = useState(false)
   const [formData, setFormData] = useState({
     name: '',
@@ -19,7 +21,7 @@ export default function ChatWidget() {
 
     // Simulate form submission
     setTimeout(() => {
-      alert('Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi sớm nhất có thể.')
+      alert(t('chat.success'))
       setFormData({ name: '', phone: '', message: '' })
       setIsSubmitting(false)
       setIsOpen(false)
@@ -91,16 +93,15 @@ export default function ChatWidget() {
                     <Stethoscope className="w-6 h-6" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold">BS. Quách Thùy Linh</h3>
+                    <h3 className="text-xl font-bold">{t('chat.title')}</h3>
                     <p className="text-sm text-primary-100">
-                      Bác Sĩ Chuyên Khoa
+                      {t('chat.subtitle')}
                     </p>
                   </div>
                 </div>
 
                 <p className="text-sm text-primary-100">
-                  Chào mừng bạn đến với phòng khám. Vui lòng nhập thông tin trước
-                  khi bắt đầu trò chuyện.
+                  {t('chat.welcome')}
                 </p>
               </div>
 
@@ -111,7 +112,7 @@ export default function ChatWidget() {
                     htmlFor="chat-name"
                     className="block text-sm font-medium text-gray-700 mb-2"
                   >
-                    Tên của bạn
+                    {t('chat.name')}
                   </label>
                   <input
                     type="text"
@@ -120,7 +121,7 @@ export default function ChatWidget() {
                     value={formData.name}
                     onChange={handleChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent transition-all"
-                    placeholder="Nhập tên của bạn"
+                    placeholder={t('chat.namePlaceholder')}
                   />
                 </div>
 
@@ -129,7 +130,7 @@ export default function ChatWidget() {
                     htmlFor="chat-phone"
                     className="block text-sm font-medium text-gray-700 mb-2"
                   >
-                    Số điện thoại của bạn
+                    {t('chat.phone')}
                   </label>
                   <input
                     type="tel"
@@ -138,7 +139,7 @@ export default function ChatWidget() {
                     value={formData.phone}
                     onChange={handleChange}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent transition-all"
-                    placeholder="Nhập số điện thoại"
+                    placeholder={t('chat.phonePlaceholder')}
                   />
                 </div>
 
@@ -147,7 +148,7 @@ export default function ChatWidget() {
                     htmlFor="chat-message"
                     className="block text-sm font-medium text-gray-700 mb-2"
                   >
-                    Tin nhắn<span className="text-red-500">*</span>
+                    {t('chat.message')}<span className="text-red-500">*</span>
                   </label>
                   <textarea
                     id="chat-message"
@@ -157,7 +158,7 @@ export default function ChatWidget() {
                     required
                     rows={4}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent transition-all resize-none"
-                    placeholder="Nhập tin nhắn của bạn*"
+                    placeholder={t('chat.messagePlaceholder')}
                   />
                 </div>
 
@@ -169,11 +170,11 @@ export default function ChatWidget() {
                   whileTap={{ scale: 0.98 }}
                 >
                   {isSubmitting ? (
-                    'Đang gửi...'
+                    t('chat.sending')
                   ) : (
                     <>
                       <Send className="w-5 h-5" />
-                      Gửi tin nhắn
+                      {t('chat.send')}
                     </>
                   )}
                 </motion.button>
@@ -182,7 +183,7 @@ export default function ChatWidget() {
               {/* Footer */}
               <div className="px-6 pb-4 text-center">
                 <p className="text-xs text-gray-500">
-                  Cung cấp bởi{' '}
+                  {t('chat.poweredBy')}{' '}
                   <span className="font-semibold text-primary-600">
                     Dr. Profile
                   </span>

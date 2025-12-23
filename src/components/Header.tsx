@@ -3,19 +3,22 @@
 import { useState, useEffect } from 'react'
 import { Menu, X, Stethoscope } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
-
-const navItems = [
-  { name: 'Trang Chủ', href: '#home' },
-  { name: 'Giới Thiệu', href: '#about' },
-  { name: 'Dịch Vụ', href: '#services' },
-  { name: 'Marketing', href: '#marketing' },
-  { name: 'Kinh Nghiệm', href: '#experience' },
-  { name: 'Liên Hệ', href: '#contact' },
-]
+import { useLanguage } from '@/contexts/LanguageContext'
+import LanguageSwitcher from './LanguageSwitcher'
 
 export default function Header() {
+  const { t } = useLanguage()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  const navItems = [
+    { name: t('nav.home'), href: '#home' },
+    { name: t('nav.about'), href: '#about' },
+    { name: t('nav.services'), href: '#services' },
+    { name: t('nav.marketing'), href: '#marketing' },
+    { name: t('nav.experience'), href: '#experience' },
+    { name: t('nav.contact'), href: '#contact' },
+  ]
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,7 +60,7 @@ export default function Header() {
           <div className="hidden md:flex items-center gap-8">
             {navItems.map((item) => (
               <motion.a
-                key={item.name}
+                key={item.href}
                 href={item.href}
                 onClick={(e) => {
                   e.preventDefault()
@@ -69,6 +72,7 @@ export default function Header() {
                 {item.name}
               </motion.a>
             ))}
+            <LanguageSwitcher />
           </div>
 
           {/* Mobile Menu Button */}
@@ -97,7 +101,7 @@ export default function Header() {
               <div className="flex flex-col gap-4 pb-4">
                 {navItems.map((item) => (
                   <a
-                    key={item.name}
+                    key={item.href}
                     href={item.href}
                     onClick={(e) => {
                       e.preventDefault()
@@ -108,6 +112,9 @@ export default function Header() {
                     {item.name}
                   </a>
                 ))}
+                <div className="pt-2">
+                  <LanguageSwitcher />
+                </div>
               </div>
             </motion.div>
           )}

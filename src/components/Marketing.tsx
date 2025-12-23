@@ -15,86 +15,70 @@ import {
   ExternalLink,
 } from 'lucide-react'
 import AnimatedNumber from './AnimatedNumber'
-
-const marketingServices = [
-  {
-    icon: PenTool,
-    title: 'Content Marketing',
-    description:
-      'Sáng tạo nội dung y tế chuyên sâu, dễ hiểu cho bệnh nhân và cộng đồng',
-    color: 'from-blue-500 to-blue-600',
-  },
-  {
-    icon: Megaphone,
-    title: 'Digital Marketing',
-    description:
-      'Xây dựng chiến lược marketing số cho bệnh viện và phòng khám',
-    color: 'from-purple-500 to-purple-600',
-  },
-  {
-    icon: Video,
-    title: 'Video Content',
-    description:
-      'Sản xuất video tư vấn sức khỏe, giới thiệu dịch vụ y tế chuyên nghiệp',
-    color: 'from-red-500 to-red-600',
-  },
-  {
-    icon: FileText,
-    title: 'Medical Writing',
-    description:
-      'Viết bài khoa học, báo cáo y tế và tài liệu chuyên môn',
-    color: 'from-green-500 to-green-600',
-  },
-  {
-    icon: BarChart3,
-    title: 'Marketing Analytics',
-    description:
-      'Phân tích dữ liệu và đo lường hiệu quả chiến dịch marketing',
-    color: 'from-yellow-500 to-yellow-600',
-  },
-  {
-    icon: Target,
-    title: 'Brand Strategy',
-    description:
-      'Xây dựng và phát triển thương hiệu y tế uy tín, chuyên nghiệp',
-    color: 'from-indigo-500 to-indigo-600',
-  },
-]
-
-const marketingProjects = [
-  {
-    title: 'Content Marketing tại Mescells',
-    organization: 'Hệ thống y tế Mescells',
-    period: '2020 - Hiện tại',
-    description:
-      'Phụ trách chiến lược content marketing và digital marketing cho hệ thống y tế chuyên sâu về y học tái tạo và trị liệu tế bào',
-    achievements: [
-      'Xây dựng và quản lý nội dung website mescells.com',
-      'Sáng tạo 200+ bài viết về công nghệ tế bào gốc',
-      'Tăng trưởng traffic website 300% trong 2 năm',
-      'Quản lý các kênh social media và community',
-    ],
-    link: 'https://mescells.com/',
-  },
-  {
-    title: 'Chiến Dịch Marketing Y Học Tái Tạo',
-    organization: 'Mescells',
-    period: '2021 - 2023',
-    description:
-      'Phát triển và thực hiện các chiến dịch marketing để nâng cao nhận thức về y học tái tạo và công nghệ tế bào gốc',
-    achievements: [
-      'Tổ chức 50+ hội thảo và sự kiện khoa học',
-      'Hợp tác với các báo lớn: VTV, Tiền Phong, Sức Khỏe Đời Sống',
-      'Xây dựng cộng đồng 10,000+ thành viên',
-      'Đạt giải thưởng Marketing Xuất Sắc trong Y Tế',
-    ],
-    link: 'https://mescells.com/',
-  },
-]
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Marketing() {
+  const { t } = useLanguage()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
+
+  const marketingServices = [
+    {
+      icon: PenTool,
+      title: t('marketing.services.contentMarketing.title'),
+      description: t('marketing.services.contentMarketing.description'),
+      color: 'from-blue-500 to-blue-600',
+    },
+    {
+      icon: Megaphone,
+      title: t('marketing.services.digitalMarketing.title'),
+      description: t('marketing.services.digitalMarketing.description'),
+      color: 'from-purple-500 to-purple-600',
+    },
+    {
+      icon: Video,
+      title: t('marketing.services.videoContent.title'),
+      description: t('marketing.services.videoContent.description'),
+      color: 'from-red-500 to-red-600',
+    },
+    {
+      icon: FileText,
+      title: t('marketing.services.medicalWriting.title'),
+      description: t('marketing.services.medicalWriting.description'),
+      color: 'from-green-500 to-green-600',
+    },
+    {
+      icon: BarChart3,
+      title: t('marketing.services.analytics.title'),
+      description: t('marketing.services.analytics.description'),
+      color: 'from-yellow-500 to-yellow-600',
+    },
+    {
+      icon: Target,
+      title: t('marketing.services.brandStrategy.title'),
+      description: t('marketing.services.brandStrategy.description'),
+      color: 'from-indigo-500 to-indigo-600',
+    },
+  ]
+
+  const marketingProjects = [
+    {
+      title: t('marketing.projects.mescells.title'),
+      organization: t('marketing.projects.mescells.organization'),
+      period: t('marketing.projects.mescells.period'),
+      description: t('marketing.projects.mescells.description'),
+      achievements: t('marketing.projects.mescells.achievements'),
+      link: 'https://mescells.com/',
+    },
+    {
+      title: t('marketing.projects.campaign.title'),
+      organization: t('marketing.projects.campaign.organization'),
+      period: t('marketing.projects.campaign.period'),
+      description: t('marketing.projects.campaign.description'),
+      achievements: t('marketing.projects.campaign.achievements'),
+      link: 'https://mescells.com/',
+    },
+  ]
 
   return (
     <section
@@ -110,12 +94,11 @@ export default function Marketing() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Marketing & Content
+            {t('marketing.title')}
           </h2>
           <div className="w-24 h-1 bg-primary-600 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Kết hợp chuyên môn y tế với marketing để truyền tải thông điệp sức
-            khỏe đến cộng đồng
+            {t('marketing.subtitle')}
           </p>
         </motion.div>
 
@@ -127,7 +110,7 @@ export default function Marketing() {
           className="mb-16"
         >
           <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-            Dịch Vụ Marketing
+            {t('marketing.servicesTitle')}
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {marketingServices.map((service, index) => {
@@ -165,7 +148,7 @@ export default function Marketing() {
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-            Dự Án Marketing Nổi Bật
+            {t('marketing.projectsTitle')}
           </h3>
           <div className="grid md:grid-cols-2 gap-8">
             {marketingProjects.map((project, index) => (
@@ -202,11 +185,11 @@ export default function Marketing() {
                   <div className="flex items-center gap-2 mb-3">
                     <TrendingUp className="w-5 h-5 text-primary-600" />
                     <span className="font-semibold text-gray-900">
-                      Thành Tựu:
+                      {t('experience.achievements')}
                     </span>
                   </div>
-                  <ul className="space-y-2">
-                    {project.achievements.map((achievement, i) => (
+                        <ul className="space-y-2">
+                          {project.achievements.map((achievement: string, i: number) => (
                       <li
                         key={i}
                         className="text-sm text-gray-600 flex items-start gap-2"
@@ -231,10 +214,10 @@ export default function Marketing() {
         >
           <div className="grid md:grid-cols-4 gap-6">
             {[
-              { number: '200+', label: 'Bài Viết Content' },
-              { number: '300%', label: 'Tăng Trưởng Traffic' },
-              { number: '50+', label: 'Sự Kiện & Hội Thảo' },
-              { number: '10K+', label: 'Cộng Đồng Online' },
+              { number: '200+', label: t('marketing.stats.articles') },
+              { number: '300%', label: t('marketing.stats.traffic') },
+              { number: '50+', label: t('marketing.stats.events') },
+              { number: '10K+', label: t('marketing.stats.community') },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}

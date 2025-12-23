@@ -4,66 +4,14 @@ import { motion } from 'framer-motion'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
 import { Calendar, MapPin, Award } from 'lucide-react'
-
-const experiences = [
-  {
-    year: '2020 - Hiện tại',
-    position: 'Content & Marketing Manager',
-    hospital: 'Hệ thống y tế Mescells',
-    location: 'Hà Nội',
-    description:
-      'Phụ trách chiến lược content marketing và digital marketing cho hệ thống y tế chuyên sâu về y học tái tạo và trị liệu tế bào',
-    achievements: [
-      'Xây dựng và quản lý nội dung website mescells.com',
-      'Sáng tạo 200+ bài viết về công nghệ tế bào gốc',
-      'Tăng trưởng traffic website 300% trong 2 năm',
-      'Quản lý các kênh social media và community',
-    ],
-  },
-  {
-    year: '2018 - Hiện tại',
-    position: 'Bác Sĩ Trưởng Khoa',
-    hospital: 'Bệnh Viện Đa Khoa Trung Ương',
-    location: 'Hà Nội',
-    description:
-      'Quản lý và điều hành khoa, đào tạo bác sĩ trẻ, thực hiện các ca phẫu thuật phức tạp',
-    achievements: [
-      'Thực hiện hơn 1000 ca phẫu thuật thành công',
-      'Đào tạo 50+ bác sĩ trẻ',
-      'Nghiên cứu và công bố 20+ bài báo khoa học',
-    ],
-  },
-  {
-    year: '2012 - 2018',
-    position: 'Bác Sĩ Chuyên Khoa',
-    hospital: 'Bệnh Viện Bạch Mai',
-    location: 'Hà Nội',
-    description:
-      'Chuyên điều trị các ca bệnh phức tạp, tham gia nghiên cứu lâm sàng',
-    achievements: [
-      'Điều trị thành công 5000+ bệnh nhân',
-      'Tham gia 10+ dự án nghiên cứu',
-      'Nhận giải thưởng Bác sĩ xuất sắc',
-    ],
-  },
-  {
-    year: '2008 - 2012',
-    position: 'Bác Sĩ Nội Trú',
-    hospital: 'Bệnh Viện Đại Học Y Hà Nội',
-    location: 'Hà Nội',
-    description:
-      'Học tập và thực hành lâm sàng dưới sự hướng dẫn của các giáo sư đầu ngành',
-    achievements: [
-      'Hoàn thành chương trình nội trú xuất sắc',
-      'Tham gia nhiều ca phẫu thuật phức tạp',
-      'Đạt điểm cao trong các kỳ thi chuyên khoa',
-    ],
-  },
-]
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Experience() {
+  const { t } = useLanguage()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
+
+  const experiences = t('experience.items') as any[]
 
   return (
     <section
@@ -79,11 +27,11 @@ export default function Experience() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Kinh Nghiệm Làm Việc
+            {t('experience.title')}
           </h2>
           <div className="w-24 h-1 bg-primary-600 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Hành trình phát triển sự nghiệp trong lĩnh vực y tế
+            {t('experience.subtitle')}
           </p>
         </motion.div>
 
@@ -127,10 +75,10 @@ export default function Experience() {
                       <Award className="w-5 h-5 text-primary-600 mt-0.5 flex-shrink-0" />
                       <div>
                         <div className="font-semibold text-gray-900 mb-2">
-                          Thành Tựu:
+                          {t('experience.achievements')}
                         </div>
                         <ul className="space-y-1">
-                          {exp.achievements.map((achievement, i) => (
+                          {exp.achievements.map((achievement: string, i: number) => (
                             <li
                               key={i}
                               className="text-sm text-gray-600 flex items-start gap-2"

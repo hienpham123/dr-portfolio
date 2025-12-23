@@ -13,37 +13,39 @@ import {
   Calendar,
   MessageSquare,
 } from 'lucide-react'
-
-const contactInfo = [
-  {
-    icon: Phone,
-    title: 'Điện Thoại',
-    content: '+84 123 456 789',
-    link: 'tel:+84123456789',
-  },
-  {
-    icon: Mail,
-    title: 'Email',
-    content: 'info@drprofile.com',
-    link: 'mailto:info@drprofile.com',
-  },
-  {
-    icon: MapPin,
-    title: 'Địa Chỉ',
-    content: '123 Đường Y Tế, Quận 1, TP.HCM',
-    link: '#',
-  },
-  {
-    icon: Clock,
-    title: 'Giờ Làm Việc',
-    content: 'Thứ 2 - Thứ 6: 8:00 - 18:00',
-    link: '#',
-  },
-]
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Contact() {
+  const { t } = useLanguage()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
+
+  const contactInfo = [
+    {
+      icon: Phone,
+      title: t('contact.contactInfo.phone.title'),
+      content: t('contact.contactInfo.phone.content'),
+      link: 'tel:+84123456789',
+    },
+    {
+      icon: Mail,
+      title: t('contact.contactInfo.email.title'),
+      content: t('contact.contactInfo.email.content'),
+      link: 'mailto:info@drprofile.com',
+    },
+    {
+      icon: MapPin,
+      title: t('contact.contactInfo.address.title'),
+      content: t('contact.contactInfo.address.content'),
+      link: '#',
+    },
+    {
+      icon: Clock,
+      title: t('contact.contactInfo.hours.title'),
+      content: t('contact.contactInfo.hours.content'),
+      link: '#',
+    },
+  ]
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -58,7 +60,7 @@ export default function Contact() {
     setIsSubmitting(true)
     // Simulate form submission
     setTimeout(() => {
-      alert('Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi sớm nhất có thể.')
+      alert(t('contact.form.success'))
       setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
       setIsSubmitting(false)
     }, 1000)
@@ -84,11 +86,11 @@ export default function Contact() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Liên Hệ
+            {t('contact.title')}
           </h2>
           <div className="w-24 h-1 bg-primary-600 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Hãy liên hệ với chúng tôi để đặt lịch hẹn hoặc tư vấn
+            {t('contact.subtitle')}
           </p>
         </motion.div>
 
@@ -102,11 +104,10 @@ export default function Contact() {
           >
             <div>
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                Thông Tin Liên Hệ
+                {t('contact.contactInfo.title')}
               </h3>
               <p className="text-gray-600 mb-8">
-                Chúng tôi luôn sẵn sàng lắng nghe và hỗ trợ bạn. Hãy liên hệ
-                với chúng tôi qua bất kỳ phương thức nào dưới đây.
+                {t('contact.contactInfo.description')}
               </p>
             </div>
 
@@ -144,11 +145,10 @@ export default function Contact() {
             >
               <div className="flex items-center gap-3 mb-4">
                 <Calendar className="w-6 h-6 text-primary-600" />
-                <h4 className="font-bold text-gray-900">Đặt Lịch Hẹn Nhanh</h4>
+                <h4 className="font-bold text-gray-900">{t('contact.quickBooking.title')}</h4>
               </div>
               <p className="text-gray-600 text-sm mb-4">
-                Bạn có thể đặt lịch hẹn trực tuyến hoặc gọi điện để được tư vấn
-                ngay.
+                {t('contact.quickBooking.description')}
               </p>
               <motion.a
                 href="#contact"
@@ -157,7 +157,7 @@ export default function Contact() {
                 whileTap={{ scale: 0.95 }}
               >
                 <Calendar className="w-5 h-5" />
-                Đặt Lịch Ngay
+                {t('contact.quickBooking.button')}
               </motion.a>
             </motion.div>
           </motion.div>
@@ -172,7 +172,7 @@ export default function Contact() {
             <div className="flex items-center gap-3 mb-6">
               <MessageSquare className="w-6 h-6 text-primary-600" />
               <h3 className="text-2xl font-bold text-gray-900">
-                Gửi Tin Nhắn
+                {t('contact.form.title')}
               </h3>
             </div>
 
@@ -182,7 +182,7 @@ export default function Contact() {
                   htmlFor="name"
                   className="block text-sm font-medium text-gray-700 mb-2"
                 >
-                  Họ và Tên
+                  {t('contact.form.name')}
                 </label>
                 <input
                   type="text"
@@ -192,7 +192,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent transition-all"
-                  placeholder="Nhập họ và tên của bạn"
+                  placeholder={t('contact.form.namePlaceholder')}
                 />
               </div>
 
@@ -202,7 +202,7 @@ export default function Contact() {
                     htmlFor="email"
                     className="block text-sm font-medium text-gray-700 mb-2"
                   >
-                    Email
+                    {t('contact.form.email')}
                   </label>
                   <input
                     type="email"
@@ -212,7 +212,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent transition-all"
-                    placeholder="your@email.com"
+                    placeholder={t('contact.form.emailPlaceholder')}
                   />
                 </div>
                 <div>
@@ -220,7 +220,7 @@ export default function Contact() {
                     htmlFor="phone"
                     className="block text-sm font-medium text-gray-700 mb-2"
                   >
-                    Số Điện Thoại
+                    {t('contact.form.phone')}
                   </label>
                   <input
                     type="tel"
@@ -230,7 +230,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent transition-all"
-                    placeholder="+84 123 456 789"
+                    placeholder={t('contact.form.phonePlaceholder')}
                   />
                 </div>
               </div>
@@ -240,7 +240,7 @@ export default function Contact() {
                   htmlFor="subject"
                   className="block text-sm font-medium text-gray-700 mb-2"
                 >
-                  Chủ Đề
+                  {t('contact.form.subject')}
                 </label>
                 <input
                   type="text"
@@ -250,7 +250,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent transition-all"
-                  placeholder="Chủ đề bạn muốn tư vấn"
+                  placeholder={t('contact.form.subjectPlaceholder')}
                 />
               </div>
 
@@ -259,7 +259,7 @@ export default function Contact() {
                   htmlFor="message"
                   className="block text-sm font-medium text-gray-700 mb-2"
                 >
-                  Tin Nhắn
+                  {t('contact.form.message')}
                 </label>
                 <textarea
                   id="message"
@@ -269,7 +269,7 @@ export default function Contact() {
                   required
                   rows={5}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-600 focus:border-transparent transition-all resize-none"
-                  placeholder="Nhập tin nhắn của bạn..."
+                  placeholder={t('contact.form.messagePlaceholder')}
                 />
               </div>
 
@@ -281,11 +281,11 @@ export default function Contact() {
                 whileTap={{ scale: 0.98 }}
               >
                 {isSubmitting ? (
-                  'Đang gửi...'
+                  t('contact.form.submitting')
                 ) : (
                   <>
                     <Send className="w-5 h-5" />
-                    Gửi Tin Nhắn
+                    {t('contact.form.submit')}
                   </>
                 )}
               </motion.button>

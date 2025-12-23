@@ -5,8 +5,10 @@ import { motion } from 'framer-motion'
 import { ArrowDown, Calendar, Clock, MapPin } from 'lucide-react'
 import MedicalScene from './ThreeJS/MedicalScene'
 import AnimatedNumber from './AnimatedNumber'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Hero() {
+  const { t } = useLanguage()
   const containerRef = useRef<HTMLDivElement>(null)
 
   const scrollToNext = () => {
@@ -41,7 +43,7 @@ export default function Hero() {
               transition={{ delay: 0.2 }}
               className="inline-block px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-4"
             >
-              Bác Sĩ Chuyên Khoa
+              {t('hero.badge')}
             </motion.div>
 
             <motion.h1
@@ -50,9 +52,9 @@ export default function Hero() {
               transition={{ delay: 0.3 }}
               className="text-5xl md:text-7xl font-bold text-gray-900 mb-6"
             >
-              Bác Sĩ
+              {t('hero.title')}
               <br />
-              <span className="text-primary-600">Quách Thùy Linh</span>
+              <span className="text-primary-600">{t('hero.titleHighlight')}</span>
             </motion.h1>
 
             <motion.p
@@ -61,9 +63,7 @@ export default function Hero() {
               transition={{ delay: 0.4 }}
               className="text-xl text-gray-600 mb-8 leading-relaxed"
             >
-              Với nhiều năm kinh nghiệm trong lĩnh vực y tế, tôi cam kết mang
-              đến dịch vụ chăm sóc sức khỏe chất lượng cao và tận tâm cho mọi
-              bệnh nhân.
+              {t('hero.description')}
             </motion.p>
 
             <motion.div
@@ -75,19 +75,19 @@ export default function Hero() {
               <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-lg shadow-sm">
                 <Calendar className="w-5 h-5 text-primary-600" />
                 <span className="text-sm font-medium text-gray-700">
-                  Lịch hẹn linh hoạt
+                  {t('hero.appointment')}
                 </span>
               </div>
               <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-lg shadow-sm">
                 <Clock className="w-5 h-5 text-primary-600" />
                 <span className="text-sm font-medium text-gray-700">
-                  24/7 Tư vấn
+                  {t('hero.support')}
                 </span>
               </div>
               <div className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-lg shadow-sm">
                 <MapPin className="w-5 h-5 text-primary-600" />
                 <span className="text-sm font-medium text-gray-700">
-                  Nhiều địa điểm
+                  {t('hero.locations')}
                 </span>
               </div>
             </motion.div>
@@ -104,7 +104,7 @@ export default function Hero() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Đặt Lịch Hẹn
+                {t('hero.bookAppointment')}
               </motion.a>
               <motion.a
                 href="#about"
@@ -112,7 +112,7 @@ export default function Hero() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Tìm Hiểu Thêm
+                {t('hero.learnMore')}
               </motion.a>
             </motion.div>
           </motion.div>
@@ -125,10 +125,10 @@ export default function Hero() {
             className="grid grid-cols-2 gap-6"
           >
             {[
-              { number: '15+', label: 'Năm Kinh Nghiệm' },
-              { number: '5000+', label: 'Bệnh Nhân' },
-              { number: '98%', label: 'Hài Lòng' },
-              { number: '24/7', label: 'Hỗ Trợ' },
+              { number: '15+', label: t('hero.yearsExperience') },
+              { number: '5000+', label: t('hero.patients') },
+              { number: '98%', label: t('hero.satisfaction') },
+              { number: '24/7', label: t('hero.support24') },
             ].map((stat, index) => (
               <motion.div
                 key={stat.label}

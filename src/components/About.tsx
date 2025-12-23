@@ -4,33 +4,35 @@ import { motion } from 'framer-motion'
 import { Award, GraduationCap, Heart, Users } from 'lucide-react'
 import { useInView } from 'framer-motion'
 import { useRef } from 'react'
-
-const achievements = [
-  {
-    icon: Award,
-    title: 'Chứng Chỉ Chuyên Khoa',
-    description: 'Được công nhận bởi các tổ chức y tế hàng đầu',
-  },
-  {
-    icon: GraduationCap,
-    title: 'Giáo Dục Xuất Sắc',
-    description: 'Tốt nghiệp từ các trường đại học y danh tiếng',
-  },
-  {
-    icon: Heart,
-    title: 'Chăm Sóc Tận Tâm',
-    description: 'Luôn đặt sức khỏe bệnh nhân lên hàng đầu',
-  },
-  {
-    icon: Users,
-    title: 'Đội Ngũ Chuyên Nghiệp',
-    description: 'Làm việc với các chuyên gia hàng đầu',
-  },
-]
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function About() {
+  const { t } = useLanguage()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
+
+  const achievements = [
+    {
+      icon: Award,
+      title: t('about.achievements.certification.title'),
+      description: t('about.achievements.certification.description'),
+    },
+    {
+      icon: GraduationCap,
+      title: t('about.achievements.education.title'),
+      description: t('about.achievements.education.description'),
+    },
+    {
+      icon: Heart,
+      title: t('about.achievements.care.title'),
+      description: t('about.achievements.care.description'),
+    },
+    {
+      icon: Users,
+      title: t('about.achievements.team.title'),
+      description: t('about.achievements.team.description'),
+    },
+  ]
 
   return (
     <section
@@ -46,12 +48,11 @@ export default function About() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Về Tôi
+            {t('about.title')}
           </h2>
           <div className="w-24 h-1 bg-primary-600 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Với niềm đam mê và cam kết không ngừng trong việc chăm sóc sức khỏe
-            cộng đồng
+            {t('about.subtitle')}
           </p>
         </motion.div>
 
@@ -63,32 +64,22 @@ export default function About() {
           >
             <div className="bg-gradient-to-br from-primary-100 to-medical-100 rounded-2xl p-8 h-full">
               <h3 className="text-3xl font-bold text-gray-900 mb-4">
-                Bác Sĩ Quách Thùy Linh
+                {t('about.name')}
               </h3>
               <p className="text-lg text-primary-600 font-semibold mb-6">
-                Bác Sĩ Chuyên Khoa
+                {t('about.role')}
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Với hơn 15 năm kinh nghiệm trong lĩnh vực y tế, tôi đã điều trị
-                thành công hàng nghìn bệnh nhân với các tình trạng sức khỏe
-                khác nhau. Chuyên môn của tôi bao gồm chẩn đoán chính xác, điều
-                trị hiệu quả và chăm sóc toàn diện.
+                {t('about.description1')}
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Tôi tin rằng mỗi bệnh nhân đều xứng đáng được nhận sự chăm sóc
-                tốt nhất. Phương pháp điều trị của tôi luôn được cá nhân hóa
-                dựa trên nhu cầu và tình trạng cụ thể của từng người.
+                {t('about.description2')}
               </p>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Ngoài công việc lâm sàng, tôi còn tham gia nghiên cứu và giảng
-                dạy để chia sẻ kiến thức với thế hệ bác sĩ trẻ.
+                {t('about.description3')}
               </p>
               <p className="text-gray-700 leading-relaxed">
-                Với niềm đam mê marketing và truyền thông, tôi đã phát triển
-                chuyên môn trong lĩnh vực content marketing y tế. Hiện tại, tôi
-                đang phụ trách chiến lược marketing và content cho hệ thống y
-                tế Mescells - đơn vị tiên phong về y học tái tạo và trị liệu tế
-                bào tại Việt Nam.
+                {t('about.description4')}
               </p>
             </div>
           </motion.div>
@@ -134,26 +125,10 @@ export default function About() {
           className="bg-gray-50 rounded-2xl p-8"
         >
           <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
-            Học Vấn & Chứng Chỉ
+            {t('about.education.title')}
           </h3>
           <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                year: '2008',
-                title: 'Bác Sĩ Y Khoa',
-                institution: 'Đại Học Y Hà Nội',
-              },
-              {
-                year: '2012',
-                title: 'Chuyên Khoa I',
-                institution: 'Bệnh Viện Bạch Mai',
-              },
-              {
-                year: '2018',
-                title: 'Chuyên Khoa II',
-                institution: 'Học Viện Quân Y',
-              },
-            ].map((item, index) => (
+            {t('about.education.items').map((item: any, index: number) => (
               <motion.div
                 key={item.title}
                 initial={{ opacity: 0, scale: 0.9 }}

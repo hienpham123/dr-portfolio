@@ -15,83 +15,75 @@ import {
   Megaphone,
   PenTool,
 } from 'lucide-react'
-
-const services = [
-  {
-    icon: Stethoscope,
-    title: 'Khám Tổng Quát',
-    description:
-      'Kiểm tra sức khỏe định kỳ và tư vấn về lối sống lành mạnh',
-    color: 'from-blue-500 to-blue-600',
-  },
-  {
-    icon: Heart,
-    title: 'Tim Mạch',
-    description:
-      'Chẩn đoán và điều trị các bệnh lý về tim mạch, huyết áp',
-    color: 'from-red-500 to-red-600',
-  },
-  {
-    icon: Brain,
-    title: 'Thần Kinh',
-    description:
-      'Điều trị các rối loạn thần kinh và bệnh lý não bộ',
-    color: 'from-purple-500 to-purple-600',
-  },
-  {
-    icon: Eye,
-    title: 'Mắt',
-    description:
-      'Khám và điều trị các bệnh về mắt, phẫu thuật mắt',
-    color: 'from-cyan-500 to-cyan-600',
-  },
-  {
-    icon: Baby,
-    title: 'Nhi Khoa',
-    description:
-      'Chăm sóc sức khỏe trẻ em từ sơ sinh đến tuổi vị thành niên',
-    color: 'from-pink-500 to-pink-600',
-  },
-  {
-    icon: Activity,
-    title: 'Nội Tiết',
-    description:
-      'Điều trị các rối loạn nội tiết, tiểu đường, tuyến giáp',
-    color: 'from-green-500 to-green-600',
-  },
-  {
-    icon: Microscope,
-    title: 'Xét Nghiệm',
-    description:
-      'Các xét nghiệm chẩn đoán chính xác và nhanh chóng',
-    color: 'from-yellow-500 to-yellow-600',
-  },
-  {
-    icon: Pill,
-    title: 'Tư Vấn Dược',
-    description:
-      'Tư vấn về thuốc và liệu pháp điều trị phù hợp',
-    color: 'from-indigo-500 to-indigo-600',
-  },
-  {
-    icon: Megaphone,
-    title: 'Content Marketing',
-    description:
-      'Sáng tạo nội dung y tế, chiến lược marketing cho bệnh viện và phòng khám',
-    color: 'from-pink-500 to-pink-600',
-  },
-  {
-    icon: PenTool,
-    title: 'Medical Writing',
-    description:
-      'Viết bài khoa học, báo cáo y tế và tài liệu chuyên môn',
-    color: 'from-teal-500 to-teal-600',
-  },
-]
+import { useLanguage } from '@/contexts/LanguageContext'
 
 export default function Services() {
+  const { t } = useLanguage()
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: '-100px' })
+
+  const services = [
+    {
+      icon: Stethoscope,
+      title: t('services.items.general.title'),
+      description: t('services.items.general.description'),
+      color: 'from-blue-500 to-blue-600',
+    },
+    {
+      icon: Heart,
+      title: t('services.items.cardiology.title'),
+      description: t('services.items.cardiology.description'),
+      color: 'from-red-500 to-red-600',
+    },
+    {
+      icon: Brain,
+      title: t('services.items.neurology.title'),
+      description: t('services.items.neurology.description'),
+      color: 'from-purple-500 to-purple-600',
+    },
+    {
+      icon: Eye,
+      title: t('services.items.ophthalmology.title'),
+      description: t('services.items.ophthalmology.description'),
+      color: 'from-cyan-500 to-cyan-600',
+    },
+    {
+      icon: Baby,
+      title: t('services.items.pediatrics.title'),
+      description: t('services.items.pediatrics.description'),
+      color: 'from-pink-500 to-pink-600',
+    },
+    {
+      icon: Activity,
+      title: t('services.items.endocrinology.title'),
+      description: t('services.items.endocrinology.description'),
+      color: 'from-green-500 to-green-600',
+    },
+    {
+      icon: Microscope,
+      title: t('services.items.lab.title'),
+      description: t('services.items.lab.description'),
+      color: 'from-yellow-500 to-yellow-600',
+    },
+    {
+      icon: Pill,
+      title: t('services.items.pharmacy.title'),
+      description: t('services.items.pharmacy.description'),
+      color: 'from-indigo-500 to-indigo-600',
+    },
+    {
+      icon: Megaphone,
+      title: t('services.items.contentMarketing.title'),
+      description: t('services.items.contentMarketing.description'),
+      color: 'from-pink-500 to-pink-600',
+    },
+    {
+      icon: PenTool,
+      title: t('services.items.medicalWriting.title'),
+      description: t('services.items.medicalWriting.description'),
+      color: 'from-teal-500 to-teal-600',
+    },
+  ]
 
   return (
     <section
@@ -107,11 +99,11 @@ export default function Services() {
           className="text-center mb-16"
         >
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Dịch Vụ Y Tế
+            {t('services.title')}
           </h2>
           <div className="w-24 h-1 bg-primary-600 mx-auto mb-6"></div>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Các dịch vụ chăm sóc sức khỏe toàn diện và chuyên nghiệp
+            {t('services.subtitle')}
           </p>
         </motion.div>
 

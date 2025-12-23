@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { Stethoscope, Facebook, Twitter, Linkedin, Instagram } from 'lucide-react'
+import { useLanguage } from '@/contexts/LanguageContext'
 
 const socialLinks = [
   { icon: Facebook, href: '#', label: 'Facebook' },
@@ -10,29 +11,29 @@ const socialLinks = [
   { icon: Instagram, href: '#', label: 'Instagram' },
 ]
 
-const footerLinks = {
-  quickLinks: [
-    { name: 'Trang Chủ', href: '#home' },
-    { name: 'Giới Thiệu', href: '#about' },
-    { name: 'Dịch Vụ', href: '#services' },
-    { name: 'Marketing', href: '#marketing' },
-    { name: 'Kinh Nghiệm', href: '#experience' },
-  ],
-  services: [
-    { name: 'Khám Tổng Quát', href: '#services' },
-    { name: 'Tim Mạch', href: '#services' },
-    { name: 'Thần Kinh', href: '#services' },
-    { name: 'Nhi Khoa', href: '#services' },
-  ],
-  contact: [
-    { name: 'Đặt Lịch Hẹn', href: '#contact' },
-    { name: 'Tư Vấn', href: '#contact' },
-    { name: 'Liên Hệ', href: '#contact' },
-  ],
-}
-
 export default function Footer() {
+  const { t } = useLanguage()
   const currentYear = new Date().getFullYear()
+
+  const footerLinks = {
+    quickLinks: [
+      { name: t('nav.home'), href: '#home' },
+      { name: t('nav.about'), href: '#about' },
+      { name: t('nav.services'), href: '#services' },
+      { name: t('nav.marketing'), href: '#marketing' },
+      { name: t('nav.experience'), href: '#experience' },
+    ],
+    services: [
+      { name: t('services.items.general.title'), href: '#services' },
+      { name: t('services.items.cardiology.title'), href: '#services' },
+      { name: t('services.items.neurology.title'), href: '#services' },
+      { name: t('services.items.pediatrics.title'), href: '#services' },
+    ],
+    contact: [
+      { name: t('contact.quickBooking.button'), href: '#contact' },
+      { name: t('nav.contact'), href: '#contact' },
+    ],
+  }
 
   return (
     <footer className="bg-gray-900 text-gray-300 py-12">
@@ -50,8 +51,7 @@ export default function Footer() {
               <span className="text-xl font-bold text-white">BS. Quách Thùy Linh</span>
             </div>
             <p className="text-sm mb-4 leading-relaxed">
-              Chăm sóc sức khỏe của bạn với sự tận tâm và chuyên nghiệp. Bác sĩ
-              Quách Thùy Linh cam kết mang đến dịch vụ y tế chất lượng cao nhất.
+              {t('footer.description')}
             </p>
             <div className="flex gap-4">
               {socialLinks.map((social) => {
@@ -79,7 +79,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h3 className="text-white font-bold mb-4">Liên Kết Nhanh</h3>
+            <h3 className="text-white font-bold mb-4">{t('footer.quickLinks')}</h3>
             <ul className="space-y-2">
               {footerLinks.quickLinks.map((link) => (
                 <li key={link.name}>
@@ -101,7 +101,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h3 className="text-white font-bold mb-4">Dịch Vụ</h3>
+            <h3 className="text-white font-bold mb-4">{t('footer.services')}</h3>
             <ul className="space-y-2">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
@@ -123,7 +123,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <h3 className="text-white font-bold mb-4">Liên Hệ</h3>
+            <h3 className="text-white font-bold mb-4">{t('footer.contact')}</h3>
             <ul className="space-y-2">
               {footerLinks.contact.map((link) => (
                 <li key={link.name}>
@@ -145,8 +145,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 pt-8 text-center text-sm">
           <p>
-            © {currentYear} Bác Sĩ Quách Thùy Linh. Tất cả quyền được bảo lưu. | Được tạo
-            với ❤️ để chăm sóc sức khỏe cộng đồng
+            © {currentYear} {t('about.name')}. {t('footer.copyright')}
           </p>
         </div>
       </div>
