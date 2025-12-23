@@ -17,7 +17,7 @@ export default function Header() {
     { name: t('nav.services'), href: '#services' },
     { name: t('nav.marketing'), href: '#marketing' },
     { name: t('nav.experience'), href: '#experience' },
-    { name: t('nav.blog'), href: '#blog' },
+    // { name: t('nav.blog'), href: '#blog' },
     { name: t('nav.testimonials'), href: '#testimonials' },
     { name: t('nav.faq'), href: '#faq' },
     { name: t('nav.contact'), href: '#contact' },

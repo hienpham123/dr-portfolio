@@ -51,7 +51,7 @@ export default function Footer() {
           >
             <div className="flex items-center gap-2 mb-4">
               <Stethoscope className="w-8 h-8 text-primary-400" />
-              <span className="text-xl font-bold text-white">BS. Quách Thùy Linh</span>
+              <span className="text-lg sm:text-xl font-bold text-white">BS. Quách Thùy Linh</span>
             </div>
             <p className="text-sm mb-4 leading-relaxed">
               {t('footer.description')}
@@ -82,7 +82,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.1 }}
           >
-            <h3 className="text-white font-bold mb-4">{t('footer.quickLinks')}</h3>
+            <h3 className="text-white font-bold mb-4 text-base sm:text-lg">{t('footer.quickLinks')}</h3>
             <ul className="space-y-2">
               {footerLinks.quickLinks.map((link) => (
                 <li key={link.name}>
@@ -104,7 +104,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            <h3 className="text-white font-bold mb-4">{t('footer.services')}</h3>
+            <h3 className="text-white font-bold mb-4 text-base sm:text-lg">{t('footer.services')}</h3>
             <ul className="space-y-2">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
@@ -126,7 +126,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            <h3 className="text-white font-bold mb-4">{t('footer.contact')}</h3>
+            <h3 className="text-white font-bold mb-4 text-base sm:text-lg">{t('footer.contact')}</h3>
             <ul className="space-y-2">
               {footerLinks.contact.map((link) => (
                 <li key={link.name}>
@@ -146,7 +146,7 @@ export default function Footer() {
           </motion.div>
         </div>
 
-        <div className="border-t border-gray-800 pt-8 text-center text-sm">
+        <div className="border-t border-gray-800 pt-8 text-center text-xs sm:text-sm">
           <p>
             © {currentYear} {t('about.name')}. {t('footer.copyright')}
           </p>

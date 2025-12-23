@@ -51,11 +51,11 @@ export default function Testimonials() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             {t('testimonials.title') || 'Đánh Giá Từ Bệnh Nhân'}
           </h2>
           <div className="w-24 h-1 bg-primary-600 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
             {t('testimonials.subtitle') ||
               'Những phản hồi chân thực từ bệnh nhân đã được điều trị'}
           </p>
@@ -79,7 +79,7 @@ export default function Testimonials() {
                   />
                 ))}
               </div>
-              <p className="text-gray-700 mb-6 leading-relaxed relative z-10 flex-1">
+              <p className="text-sm sm:text-base text-gray-700 mb-6 leading-relaxed relative z-10 flex-1">
                 &ldquo;{testimonial.comment}&rdquo;
               </p>
               <div className="border-t border-gray-200 pt-4 mt-auto">

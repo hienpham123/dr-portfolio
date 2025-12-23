@@ -41,11 +41,11 @@ export default function FAQ() {
           <div className="inline-block p-3 bg-primary-100 rounded-full mb-4">
             <HelpCircle className="w-8 h-8 text-primary-600" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             {t('faq.title') || 'Câu Hỏi Thường Gặp'}
           </h2>
           <div className="w-24 h-1 bg-primary-600 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
             {t('faq.subtitle') ||
               'Tìm câu trả lời cho những câu hỏi phổ biến'}
           </p>
@@ -64,7 +64,7 @@ export default function FAQ() {
                 onClick={() => toggleFAQ(index)}
                 className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-gray-50 transition-colors"
               >
-                <span className="font-semibold text-gray-900 pr-4">
+                <span className="font-semibold text-gray-900 pr-4 text-sm sm:text-base">
                   {faq.question}
                 </span>
                 <motion.div
@@ -83,7 +83,7 @@ export default function FAQ() {
                     transition={{ duration: 0.3 }}
                     className="overflow-hidden"
                   >
-                    <div className="px-6 py-4 text-gray-600 leading-relaxed border-t border-gray-100">
+                    <div className="px-6 py-4 text-gray-600 leading-relaxed border-t border-gray-100 text-sm sm:text-base">
                       {faq.answer}
                     </div>
                   </motion.div>

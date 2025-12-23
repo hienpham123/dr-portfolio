@@ -93,11 +93,11 @@ export default function Marketing() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             {t('marketing.title')}
           </h2>
           <div className="w-24 h-1 bg-primary-600 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
             {t('marketing.subtitle')}
           </p>
         </motion.div>
@@ -109,7 +109,7 @@ export default function Marketing() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mb-16"
         >
-          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+          <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-8 text-center">
             {t('marketing.servicesTitle')}
           </h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -129,10 +129,10 @@ export default function Marketing() {
                   >
                     <Icon className="w-8 h-8 text-white" />
                   </div>
-                  <h4 className="text-xl font-bold text-gray-900 mb-3">
+                  <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-3">
                     {service.title}
                   </h4>
-                  <p className="text-gray-600 text-sm leading-relaxed">
+                  <p className="text-gray-600 text-[13px] sm:text-sm leading-relaxed">
                     {service.description}
                   </p>
                 </motion.div>
@@ -147,7 +147,7 @@ export default function Marketing() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+          <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-8 text-center">
             {t('marketing.projectsTitle')}
           </h3>
           <div className="grid md:grid-cols-2 gap-8">
@@ -161,10 +161,10 @@ export default function Marketing() {
               >
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <h4 className="text-2xl font-bold text-gray-900 mb-2">
+                    <h4 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
                       {project.title}
                     </h4>
-                    <p className="text-primary-600 font-semibold mb-1">
+                    <p className="text-primary-600 font-semibold mb-1 text-sm sm:text-base">
                       {project.organization}
                     </p>
                     <p className="text-sm text-gray-500">{project.period}</p>
@@ -178,7 +178,7 @@ export default function Marketing() {
                     <ExternalLink className="w-5 h-5" />
                   </a>
                 </div>
-                <p className="text-gray-700 mb-6 leading-relaxed">
+                <p className="text-sm sm:text-base text-gray-700 mb-6 leading-relaxed">
                   {project.description}
                 </p>
                 <div>
@@ -192,7 +192,7 @@ export default function Marketing() {
                           {project.achievements.map((achievement: string, i: number) => (
                       <li
                         key={i}
-                        className="text-sm text-gray-600 flex items-start gap-2"
+                        className="text-xs sm:text-sm text-gray-600 flex items-start gap-2"
                       >
                         <span className="text-primary-600 mt-1">✓</span>
                         <span>{achievement}</span>
@@ -226,10 +226,10 @@ export default function Marketing() {
                 transition={{ duration: 0.5, delay: 1.4 + index * 0.1 }}
                 className="text-center"
               >
-                <div className="text-4xl font-bold text-primary-600 mb-2">
+                <div className="text-3xl sm:text-4xl font-bold text-primary-600 mb-2">
                   <AnimatedNumber value={stat.number} duration={2000} />
                 </div>
-                <div className="text-sm text-gray-600">{stat.label}</div>
+                <div className="text-xs sm:text-sm text-gray-600">{stat.label}</div>
               </motion.div>
             ))}
           </div>

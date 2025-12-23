@@ -71,9 +71,9 @@ export default function Blog() {
     <section
       id="blog"
       ref={ref}
-      className="py-20 bg-white relative overflow-hidden"
+      className="py-16 sm:py-20 bg-white relative overflow-hidden"
     >
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -84,11 +84,11 @@ export default function Blog() {
           <div className="inline-block p-3 bg-primary-100 rounded-full mb-4">
             <BookOpen className="w-8 h-8 text-primary-600" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             {t('blog.title') || 'Bài Viết Sức Khỏe'}
           </h2>
           <div className="w-24 h-1 bg-primary-600 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
             {t('blog.subtitle') ||
               'Chia sẻ kiến thức y tế và lời khuyên sức khỏe từ chuyên gia'}
           </p>
@@ -99,7 +99,7 @@ export default function Blog() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="max-w-4xl mx-auto mb-12"
+          className="max-w-5xl mx-auto mb-12"
         >
           {/* Search Bar */}
           <div className="relative mb-6">
@@ -117,14 +117,14 @@ export default function Blog() {
           <div className="mb-6">
             <div className="flex items-center gap-2 mb-3">
               <Filter className="w-5 h-5 text-gray-600" />
-              <span className="font-semibold text-gray-700">
+              <span className="font-semibold text-gray-700 text-sm sm:text-base">
                 {t('blog.categoriesTitle') || 'Danh Mục:'}
               </span>
             </div>
             <div className="flex flex-wrap gap-3">
               <button
                 onClick={() => handleCategoryClick('all')}
-                className={`px-4 py-2 rounded-lg font-medium transition-all ${
+                className={`px-4 py-2 rounded-lg font-medium text-sm sm:text-base transition-all ${
                   selectedCategory === 'all'
                     ? 'bg-primary-600 text-white shadow-md'
                     : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -136,7 +136,7 @@ export default function Blog() {
                 <button
                   key={category}
                   onClick={() => handleCategoryClick(category)}
-                  className={`px-4 py-2 rounded-lg font-medium transition-all ${
+                  className={`px-4 py-2 rounded-lg font-medium text-sm sm:text-base transition-all ${
                     selectedCategory === category
                       ? 'bg-primary-600 text-white shadow-md'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
@@ -152,14 +152,14 @@ export default function Blog() {
           <div className="mb-4">
             <div className="flex items-center gap-2 mb-3">
               <Tag className="w-5 h-5 text-gray-600" />
-              <span className="font-semibold text-gray-700">
+              <span className="font-semibold text-gray-700 text-sm sm:text-base">
                 {t('blog.tagsTitle') || 'Thẻ:'}
               </span>
             </div>
             <div className="flex flex-wrap gap-2">
               <button
                 onClick={() => handleTagClick('all')}
-                className={`px-3 py-1 rounded-full text-sm font-medium transition-all ${
+                className={`px-3 py-1 rounded-full text-xs sm:text-sm font-medium transition-all ${
                   selectedTag === 'all'
                     ? 'bg-primary-600 text-white'
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
@@ -171,7 +171,7 @@ export default function Blog() {
                 <button
                   key={tag}
                   onClick={() => handleTagClick(tag)}
-                  className={`px-3 py-1 rounded-full text-sm font-medium transition-all ${
+                  className={`px-3 py-1 rounded-full text-xs sm:text-sm font-medium transition-all ${
                     selectedTag === tag
                       ? 'bg-primary-600 text-white'
                       : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
@@ -202,42 +202,43 @@ export default function Blog() {
 
         {/* Blog Posts Grid */}
         {filteredPosts.length > 0 ? (
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 max-w-7xl mx-auto">
             {filteredPosts.map((post, index) => (
               <Link
                 key={post.id}
                 href={`/blog/${post.id}`}
-                className="block"
+                className="block h-full"
               >
                 <motion.article
                   initial={{ opacity: 0, y: 50 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden group cursor-pointer h-full flex flex-col"
+                  className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow overflow-hidden group cursor-pointer h-full flex flex-col"
                 >
-                {/* Image Placeholder */}
-                <div className="h-48 bg-gradient-to-br from-primary-100 to-primary-200 relative overflow-hidden">
-                  {post.image ? (
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center">
-                      <BookOpen className="w-16 h-16 text-primary-400" />
+                  {/* Image Placeholder */}
+                  <div className="aspect-[16/9] bg-gradient-to-br from-primary-100 to-primary-200 relative overflow-hidden">
+                    {post.image ? (
+                      <img
+                        src={post.image}
+                        alt={post.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                        loading="lazy"
+                      />
+                    ) : (
+                      <div className="w-full h-full flex items-center justify-center">
+                        <BookOpen className="w-14 h-14 sm:w-16 sm:h-16 text-primary-400" />
+                      </div>
+                    )}
+                    <div className="absolute top-3 left-3 sm:top-4 sm:left-4">
+                      <span className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-xs sm:text-sm font-semibold text-primary-600">
+                        {post.category}
+                      </span>
                     </div>
-                  )}
-                  <div className="absolute top-4 left-4">
-                    <span className="bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-primary-600">
-                      {post.category}
-                    </span>
                   </div>
-                </div>
 
                 {/* Content */}
-                <div className="p-6">
-                  <div className="flex items-center gap-4 text-sm text-gray-500 mb-3">
+                  <div className="p-5 sm:p-6 flex-1 flex flex-col">
+                  <div className="flex items-center gap-4 text-xs sm:text-sm text-gray-500 mb-3">
                     <div className="flex items-center gap-1">
                       <Calendar className="w-4 h-4" />
                       <span>{post.date}</span>
@@ -248,11 +249,11 @@ export default function Blog() {
                     </div>
                   </div>
 
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
+                  <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 mb-3 group-hover:text-primary-600 transition-colors">
                     {post.title}
                   </h3>
 
-                  <p className="text-gray-600 mb-4 line-clamp-3">{post.excerpt}</p>
+                  <p className="text-sm sm:text-base text-gray-600 mb-4 line-clamp-3">{post.excerpt}</p>
 
                   {/* Tags */}
                   <div className="flex flex-wrap gap-2 mb-4">
@@ -286,7 +287,7 @@ export default function Blog() {
             className="text-center py-12"
           >
             <BookOpen className="w-16 h-16 text-gray-300 mx-auto mb-4" />
-            <p className="text-xl text-gray-600">
+            <p className="text-lg sm:text-xl text-gray-600">
               {t('blog.noResults') || 'Không tìm thấy bài viết nào'}
             </p>
             <button

@@ -85,11 +85,11 @@ export default function Contact() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             {t('contact.title')}
           </h2>
           <div className="w-24 h-1 bg-primary-600 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
             {t('contact.subtitle')}
           </p>
         </motion.div>
@@ -103,10 +103,10 @@ export default function Contact() {
             className="space-y-6"
           >
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-6">
                 {t('contact.contactInfo.title')}
               </h3>
-              <p className="text-gray-600 mb-8">
+              <p className="text-sm sm:text-base text-gray-600 mb-8">
                 {t('contact.contactInfo.description')}
               </p>
             </div>
@@ -130,7 +130,7 @@ export default function Contact() {
                       <h4 className="font-semibold text-gray-900 mb-1">
                         {info.title}
                       </h4>
-                      <p className="text-gray-600">{info.content}</p>
+                      <p className="text-sm sm:text-base text-gray-600">{info.content}</p>
                     </div>
                   </motion.a>
                 )
@@ -147,12 +147,12 @@ export default function Contact() {
                 <Calendar className="w-6 h-6 text-primary-600" />
                 <h4 className="font-bold text-gray-900">{t('contact.quickBooking.title')}</h4>
               </div>
-              <p className="text-gray-600 text-sm mb-4">
+              <p className="text-[13px] sm:text-sm text-gray-600 mb-4">
                 {t('contact.quickBooking.description')}
               </p>
               <motion.a
                 href="#contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 text-white rounded-lg font-semibold hover:bg-primary-700 transition-colors"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-primary-600 text-white rounded-lg font-semibold hover:bg-primary-700 transition-colors text-sm sm:text-base"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -171,7 +171,7 @@ export default function Contact() {
           >
             <div className="flex items-center gap-3 mb-6">
               <MessageSquare className="w-6 h-6 text-primary-600" />
-              <h3 className="text-2xl font-bold text-gray-900">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900">
                 {t('contact.form.title')}
               </h3>
             </div>

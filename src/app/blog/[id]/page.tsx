@@ -55,8 +55,8 @@ export default function BlogPostPage() {
     <>
       <Header />
       <main className="min-h-screen pt-20">
-        <article className="py-12 bg-white">
-          <div className="container mx-auto px-4 max-w-4xl">
+        <article className="py-12 sm:py-16 bg-white">
+          <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
             {/* Back Button */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
@@ -65,7 +65,7 @@ export default function BlogPostPage() {
             >
               <Link
                 href="/#blog"
-                className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-medium transition-colors"
+                className="inline-flex items-center gap-2 text-primary-600 hover:text-primary-700 font-medium transition-colors text-sm sm:text-base"
               >
                 <ArrowLeft className="w-5 h-5" />
                 {t('blog.backToBlog') || 'Quay lại danh sách bài viết'}
@@ -87,12 +87,12 @@ export default function BlogPostPage() {
               </div>
 
               {/* Title */}
-              <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
                 {post.title}
               </h1>
 
               {/* Meta Info */}
-              <div className="flex flex-wrap items-center gap-6 text-gray-600 mb-6">
+              <div className="flex flex-wrap items-center gap-4 sm:gap-6 text-gray-600 mb-6">
                 <div className="flex items-center gap-2">
                   <Calendar className="w-5 h-5" />
                   <span>{post.date}</span>
@@ -126,20 +126,23 @@ export default function BlogPostPage() {
 
             {/* Featured Image */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
+              initial={{ opacity: 0, scale: 0.97 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="mb-8 rounded-xl overflow-hidden"
             >
               {post.image ? (
-                <img
-                  src={post.image}
-                  alt={post.title}
-                  className="w-full h-96 object-cover"
-                />
+                <div className="w-full bg-gray-100">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-full object-cover"
+                    style={{ aspectRatio: '16 / 9' }}
+                  />
+                </div>
               ) : (
-                <div className="w-full h-96 bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
-                  <BookOpen className="w-24 h-24 text-primary-400" />
+                <div className="w-full bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center" style={{ aspectRatio: '16 / 9' }}>
+                  <BookOpen className="w-20 h-20 sm:w-24 sm:h-24 text-primary-400" />
                 </div>
               )}
             </motion.div>
@@ -149,16 +152,16 @@ export default function BlogPostPage() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="prose prose-lg max-w-none"
+              className="prose prose-base sm:prose-lg max-w-none prose-img:rounded-xl"
             >
               <div className="text-gray-700 leading-relaxed space-y-6">
                 {/* Excerpt */}
-                <p className="text-xl text-gray-600 font-medium italic border-l-4 border-primary-600 pl-6">
+                <p className="text-lg sm:text-xl text-gray-600 font-medium italic border-l-4 border-primary-600 pl-4 sm:pl-6">
                   {post.excerpt}
                 </p>
 
                 {/* Main Content */}
-                <div className="text-base md:text-lg leading-8 whitespace-pre-line">
+                <div className="text-base sm:text-lg leading-8 whitespace-pre-line">
                   {post.content.split('\n').map((paragraph, index) => (
                     <p key={index} className="mb-6">
                       {paragraph}

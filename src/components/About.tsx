@@ -47,11 +47,11 @@ export default function About() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             {t('about.title')}
           </h2>
           <div className="w-24 h-1 bg-primary-600 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
             {t('about.subtitle')}
           </p>
         </motion.div>
@@ -63,22 +63,22 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div className="bg-gradient-to-br from-primary-100 to-medical-100 rounded-2xl p-8 h-full">
-              <h3 className="text-3xl font-bold text-gray-900 mb-4">
+              <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
                 {t('about.name')}
               </h3>
-              <p className="text-lg text-primary-600 font-semibold mb-6">
+              <p className="text-base sm:text-lg text-primary-600 font-semibold mb-6">
                 {t('about.role')}
               </p>
-              <p className="text-gray-700 leading-relaxed mb-4">
+              <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-4">
                 {t('about.description1')}
               </p>
-              <p className="text-gray-700 leading-relaxed mb-4">
+              <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-4">
                 {t('about.description2')}
               </p>
-              <p className="text-gray-700 leading-relaxed mb-4">
+              <p className="text-sm sm:text-base text-gray-700 leading-relaxed mb-4">
                 {t('about.description3')}
               </p>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-sm sm:text-base text-gray-700 leading-relaxed">
                 {t('about.description4')}
               </p>
             </div>
@@ -124,7 +124,7 @@ export default function About() {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="bg-gray-50 rounded-2xl p-8"
         >
-          <h3 className="text-2xl font-bold text-gray-900 mb-8 text-center">
+          <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-8 text-center">
             {t('about.education.title')}
           </h3>
           <div className="grid md:grid-cols-3 gap-6">
@@ -136,7 +136,7 @@ export default function About() {
                 transition={{ duration: 0.5, delay: 1 + index * 0.1 }}
                 className="text-center"
               >
-                <div className="text-primary-600 font-bold text-lg mb-2">
+                <div className="text-primary-600 font-bold text-base sm:text-lg mb-2">
                   {item.year}
                 </div>
                 <div className="font-semibold text-gray-900 mb-1">

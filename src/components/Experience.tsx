@@ -26,11 +26,11 @@ export default function Experience() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             {t('experience.title')}
           </h2>
           <div className="w-24 h-1 bg-primary-600 mx-auto mb-6"></div>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
             {t('experience.subtitle')}
           </p>
         </motion.div>
@@ -58,7 +58,7 @@ export default function Experience() {
                     <Calendar className="w-4 h-4" />
                     <span className="font-semibold">{exp.year}</span>
                   </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                  <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
                     {exp.position}
                   </h3>
                   <div className="flex items-center gap-2 text-gray-600 mb-4">
@@ -67,7 +67,7 @@ export default function Experience() {
                     <span className="text-gray-400">•</span>
                     <span>{exp.location}</span>
                   </div>
-                  <p className="text-gray-700 mb-4 leading-relaxed">
+                  <p className="text-sm sm:text-base text-gray-700 mb-4 leading-relaxed">
                     {exp.description}
                   </p>
                   <div className="space-y-2">
@@ -81,7 +81,7 @@ export default function Experience() {
                           {exp.achievements.map((achievement: string, i: number) => (
                             <li
                               key={i}
-                              className="text-sm text-gray-600 flex items-start gap-2"
+                              className="text-xs sm:text-sm text-gray-600 flex items-start gap-2"
                             >
                               <span className="text-primary-600 mt-1">•</span>
                               <span>{achievement}</span>
