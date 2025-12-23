@@ -10,6 +10,7 @@ import Footer from '@/components/Footer'
 import ScrollToTop from '@/components/ScrollToTop'
 import ChatWidget from '@/components/ChatWidget'
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function BlogPostPage() {
   const params = useParams()
@@ -133,7 +134,7 @@ export default function BlogPostPage() {
             >
               {post.image ? (
                 <div className="w-full bg-gray-100">
-                  <img
+                  <Image
                     src={post.image}
                     alt={post.title}
                     className="w-full h-full object-cover"

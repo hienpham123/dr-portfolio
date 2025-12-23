@@ -7,6 +7,7 @@ import { useRef } from 'react'
 import { Search, Calendar, Tag, BookOpen, Filter } from 'lucide-react'
 import { useLanguage } from '@/contexts/LanguageContext'
 import Link from 'next/link'
+import Image from 'next/image'
 
 interface BlogPost {
   id: number
@@ -218,7 +219,7 @@ export default function Blog() {
                   {/* Image Placeholder */}
                   <div className="aspect-[16/9] bg-gradient-to-br from-primary-100 to-primary-200 relative overflow-hidden">
                     {post.image ? (
-                      <img
+                      <Image
                         src={post.image}
                         alt={post.title}
                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
