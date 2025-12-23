@@ -22,6 +22,9 @@ export default function Footer() {
       { name: t('nav.services'), href: '#services' },
       { name: t('nav.marketing'), href: '#marketing' },
       { name: t('nav.experience'), href: '#experience' },
+      { name: t('nav.blog'), href: '#blog' },
+      { name: t('nav.testimonials') || 'Đánh Giá', href: '#testimonials' },
+      { name: t('nav.faq') || 'FAQ', href: '#faq' },
     ],
     services: [
       { name: t('services.items.general.title'), href: '#services' },

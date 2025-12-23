@@ -8,6 +8,9 @@ export const translations = {
       services: 'Dịch Vụ',
       marketing: 'Marketing',
       experience: 'Kinh Nghiệm',
+      blog: 'Bài Viết',
+      testimonials: 'Đánh Giá',
+      faq: 'FAQ',
       contact: 'Liên Hệ',
     },
     hero: {
@@ -299,6 +302,170 @@ export const translations = {
         success: 'Cảm ơn bạn đã liên hệ! Chúng tôi sẽ phản hồi sớm nhất có thể.',
       },
     },
+    testimonials: {
+      title: 'Đánh Giá Từ Bệnh Nhân',
+      subtitle: 'Những phản hồi chân thực từ bệnh nhân đã được điều trị',
+    },
+    blog: {
+      title: 'Bài Viết Sức Khỏe',
+      subtitle: 'Chia sẻ kiến thức y tế và lời khuyên sức khỏe từ chuyên gia',
+      searchPlaceholder: 'Tìm kiếm bài viết...',
+      categoriesTitle: 'Danh Mục:',
+      tagsTitle: 'Thẻ:',
+      allCategories: 'Tất Cả',
+      allTags: 'Tất Cả',
+      clearFilters: 'Xóa bộ lọc',
+      resultsCount: 'Tìm thấy',
+      postsFound: 'bài viết',
+      readMore: 'Đọc thêm',
+      noResults: 'Không tìm thấy bài viết nào',
+      backToBlog: 'Quay lại danh sách bài viết',
+      share: 'Chia sẻ',
+      shareArticle: 'Chia sẻ bài viết này',
+      shareDescription: 'Giúp người khác tìm thấy thông tin hữu ích này',
+      relatedPosts: 'Bài viết liên quan',
+      viewAll: 'Xem tất cả bài viết',
+      notFound: 'Bài viết không tìm thấy',
+      linkCopied: 'Đã sao chép link!',
+      categories: [
+        'Sức Khỏe Tổng Quát',
+        'Tim Mạch',
+        'Nội Tiết',
+        'Nhi Khoa',
+        'Phụ Khoa',
+        'Y Học Tái Tạo',
+        'Dinh Dưỡng',
+        'Tâm Lý Sức Khỏe',
+      ],
+      tags: [
+        'sức khỏe',
+        'phòng bệnh',
+        'điều trị',
+        'dinh dưỡng',
+        'tập luyện',
+        'tế bào gốc',
+        'y học tái tạo',
+        'tim mạch',
+        'tiểu đường',
+        'ung thư',
+        'nhi khoa',
+        'phụ nữ',
+      ],
+      posts: [
+        {
+          id: 1,
+          title: '10 Dấu Hiệu Cảnh Báo Bệnh Tim Mạch Bạn Cần Biết',
+          excerpt:
+            'Bệnh tim mạch là nguyên nhân hàng đầu gây tử vong trên toàn thế giới. Nhận biết sớm các dấu hiệu cảnh báo có thể giúp bạn phòng ngừa và điều trị kịp thời.',
+          content:
+            'Bệnh tim mạch là một trong những vấn đề sức khỏe nghiêm trọng nhất hiện nay. Bài viết này sẽ giúp bạn nhận biết 10 dấu hiệu cảnh báo quan trọng nhất về bệnh tim mạch, bao gồm đau ngực, khó thở, mệt mỏi bất thường và nhiều dấu hiệu khác. Việc phát hiện sớm và điều trị kịp thời có thể cứu sống bạn.',
+          category: 'Tim Mạch',
+          tags: ['tim mạch', 'sức khỏe', 'phòng bệnh'],
+          date: '15/01/2024',
+          readTime: '5 phút đọc',
+        },
+        {
+          id: 2,
+          title: 'Y Học Tái Tạo: Tương Lai Của Điều Trị Y Tế',
+          excerpt:
+            'Y học tái tạo đang mở ra những khả năng mới trong điều trị các bệnh mãn tính và chấn thương. Tìm hiểu về công nghệ tế bào gốc và ứng dụng thực tế.',
+          content:
+            'Y học tái tạo là một lĩnh vực đang phát triển nhanh chóng, sử dụng công nghệ tế bào gốc để tái tạo và sửa chữa các mô bị tổn thương. Bài viết này sẽ giới thiệu về các phương pháp điều trị mới nhất, bao gồm liệu pháp tế bào gốc, kỹ thuật mô học và các ứng dụng trong điều trị bệnh tim, tiểu đường, và các bệnh mãn tính khác.',
+          category: 'Y Học Tái Tạo',
+          tags: ['y học tái tạo', 'tế bào gốc', 'điều trị'],
+          date: '12/01/2024',
+          readTime: '8 phút đọc',
+        },
+        {
+          id: 3,
+          title: 'Dinh Dưỡng Cho Trẻ Em: Hướng Dẫn Toàn Diện',
+          excerpt:
+            'Dinh dưỡng đúng cách trong những năm đầu đời là nền tảng cho sự phát triển khỏe mạnh của trẻ. Tìm hiểu về các chất dinh dưỡng cần thiết và thực đơn phù hợp.',
+          content:
+            'Dinh dưỡng cho trẻ em là một chủ đề quan trọng mà mọi phụ huynh cần quan tâm. Bài viết này cung cấp hướng dẫn chi tiết về các chất dinh dưỡng cần thiết cho trẻ ở các độ tuổi khác nhau, cách xây dựng thực đơn cân bằng, và các lưu ý về an toàn thực phẩm.',
+          category: 'Nhi Khoa',
+          tags: ['nhi khoa', 'dinh dưỡng', 'sức khỏe'],
+          date: '10/01/2024',
+          readTime: '6 phút đọc',
+        },
+        {
+          id: 4,
+          title: 'Phòng Ngừa Tiểu Đường: Lối Sống Lành Mạnh',
+          excerpt:
+            'Tiểu đường type 2 có thể được phòng ngừa thông qua lối sống lành mạnh. Tìm hiểu về chế độ ăn uống, tập luyện và các thói quen tốt cho sức khỏe.',
+          content:
+            'Tiểu đường là một bệnh mãn tính đang gia tăng nhanh chóng. Tuy nhiên, nhiều trường hợp tiểu đường type 2 có thể được phòng ngừa thông qua việc duy trì lối sống lành mạnh. Bài viết này sẽ hướng dẫn bạn về chế độ ăn uống phù hợp, chương trình tập luyện, và các thói quen sinh hoạt giúp giảm nguy cơ mắc bệnh.',
+          category: 'Nội Tiết',
+          tags: ['tiểu đường', 'phòng bệnh', 'dinh dưỡng'],
+          date: '08/01/2024',
+          readTime: '7 phút đọc',
+        },
+        {
+          id: 5,
+          title: 'Tầm Soát Ung Thư: Khi Nào Và Như Thế Nào?',
+          excerpt:
+            'Tầm soát ung thư định kỳ là cách tốt nhất để phát hiện sớm và điều trị hiệu quả. Tìm hiểu về các phương pháp tầm soát phổ biến và lịch trình khuyến nghị.',
+          content:
+            'Tầm soát ung thư là một phần quan trọng của chăm sóc sức khỏe phòng ngừa. Bài viết này sẽ giải thích về tầm quan trọng của việc tầm soát, các phương pháp phổ biến như xét nghiệm máu, chụp X-quang, và nội soi, cùng với lịch trình khuyến nghị cho từng loại ung thư.',
+          category: 'Sức Khỏe Tổng Quát',
+          tags: ['ung thư', 'phòng bệnh', 'sức khỏe'],
+          date: '05/01/2024',
+          readTime: '9 phút đọc',
+        },
+        {
+          id: 6,
+          title: 'Sức Khỏe Tâm Lý: Chăm Sóc Sức Khỏe Tinh Thần',
+          excerpt:
+            'Sức khỏe tâm lý là một phần không thể tách rời của sức khỏe tổng thể. Tìm hiểu về các dấu hiệu cảnh báo và cách chăm sóc sức khỏe tinh thần.',
+          content:
+            'Sức khỏe tâm lý đóng vai trò quan trọng trong cuộc sống của chúng ta. Bài viết này sẽ thảo luận về các vấn đề sức khỏe tâm lý phổ biến, cách nhận biết các dấu hiệu cảnh báo, và các phương pháp tự chăm sóc cũng như khi nào cần tìm kiếm sự giúp đỡ chuyên nghiệp.',
+          category: 'Tâm Lý Sức Khỏe',
+          tags: ['tâm lý sức khỏe', 'sức khỏe', 'phòng bệnh'],
+          date: '03/01/2024',
+          readTime: '6 phút đọc',
+        },
+      ],
+    },
+    faq: {
+      title: 'Câu Hỏi Thường Gặp',
+      subtitle: 'Tìm câu trả lời cho những câu hỏi phổ biến',
+      items: [
+        {
+          question: 'Làm thế nào để đặt lịch hẹn?',
+          answer:
+            'Bạn có thể đặt lịch hẹn bằng cách điền form liên hệ trên website, gọi điện trực tiếp, hoặc sử dụng widget chat ở góc dưới bên phải màn hình.',
+        },
+        {
+          question: 'Bác sĩ có khám ngoài giờ không?',
+          answer:
+            'Có, bác sĩ có dịch vụ tư vấn 24/7. Bạn có thể liên hệ qua điện thoại hoặc chat widget bất cứ lúc nào.',
+        },
+        {
+          question: 'Bác sĩ có chấp nhận bảo hiểm y tế không?',
+          answer:
+            'Có, chúng tôi chấp nhận hầu hết các loại bảo hiểm y tế. Vui lòng liên hệ để biết thêm chi tiết.',
+        },
+        {
+          question: 'Thời gian khám bệnh là bao lâu?',
+          answer:
+            'Thời gian khám bệnh thường từ 30-60 phút tùy thuộc vào tình trạng sức khỏe và nhu cầu của bệnh nhân.',
+        },
+        {
+          question: 'Có thể đặt lịch khám online không?',
+          answer:
+            'Có, chúng tôi hỗ trợ tư vấn online qua video call. Bạn có thể đặt lịch và chọn hình thức khám online.',
+        },
+      ],
+    },
+    error: {
+      notFound: {
+        title: 'Trang không tìm thấy',
+        description:
+          'Xin lỗi, trang bạn đang tìm kiếm không tồn tại hoặc đã bị di chuyển.',
+        home: 'Về Trang Chủ',
+        back: 'Quay Lại',
+      },
+    },
     footer: {
       description:
         'Chăm sóc sức khỏe của bạn với sự tận tâm và chuyên nghiệp. Bác sĩ Quách Thùy Linh cam kết mang đến dịch vụ y tế chất lượng cao nhất.',
@@ -331,6 +498,9 @@ export const translations = {
       services: 'Services',
       marketing: 'Marketing',
       experience: 'Experience',
+      blog: 'Blog',
+      testimonials: 'Reviews',
+      faq: 'FAQ',
       contact: 'Contact',
     },
     hero: {
@@ -620,6 +790,170 @@ export const translations = {
         submit: 'Send Message',
         submitting: 'Sending...',
         success: 'Thank you for contacting us! We will respond as soon as possible.',
+      },
+    },
+    testimonials: {
+      title: 'Patient Reviews',
+      subtitle: 'Genuine feedback from treated patients',
+    },
+    blog: {
+      title: 'Health Articles',
+      subtitle: 'Sharing medical knowledge and health advice from experts',
+      searchPlaceholder: 'Search articles...',
+      categoriesTitle: 'Categories:',
+      tagsTitle: 'Tags:',
+      allCategories: 'All',
+      allTags: 'All',
+      clearFilters: 'Clear filters',
+      resultsCount: 'Found',
+      postsFound: 'articles',
+      readMore: 'Read more',
+      noResults: 'No articles found',
+      backToBlog: 'Back to blog',
+      share: 'Share',
+      shareArticle: 'Share this article',
+      shareDescription: 'Help others find this useful information',
+      relatedPosts: 'Related posts',
+      viewAll: 'View all articles',
+      notFound: 'Article not found',
+      linkCopied: 'Link copied!',
+      categories: [
+        'General Health',
+        'Cardiology',
+        'Endocrinology',
+        'Pediatrics',
+        'Gynecology',
+        'Regenerative Medicine',
+        'Nutrition',
+        'Mental Health',
+      ],
+      tags: [
+        'health',
+        'prevention',
+        'treatment',
+        'nutrition',
+        'exercise',
+        'stem cells',
+        'regenerative medicine',
+        'cardiology',
+        'diabetes',
+        'cancer',
+        'pediatrics',
+        'women',
+      ],
+      posts: [
+        {
+          id: 1,
+          title: '10 Warning Signs of Heart Disease You Should Know',
+          excerpt:
+            'Heart disease is the leading cause of death worldwide. Early recognition of warning signs can help you prevent and treat it in time.',
+          content:
+            'Heart disease is one of the most serious health problems today. This article will help you recognize the 10 most important warning signs of heart disease, including chest pain, shortness of breath, unusual fatigue, and many other signs. Early detection and timely treatment can save your life.',
+          category: 'Cardiology',
+          tags: ['cardiology', 'health', 'prevention'],
+          date: '01/15/2024',
+          readTime: '5 min read',
+        },
+        {
+          id: 2,
+          title: 'Regenerative Medicine: The Future of Medical Treatment',
+          excerpt:
+            'Regenerative medicine is opening up new possibilities in treating chronic diseases and injuries. Learn about stem cell technology and practical applications.',
+          content:
+            'Regenerative medicine is a rapidly growing field that uses stem cell technology to regenerate and repair damaged tissues. This article will introduce the latest treatment methods, including stem cell therapy, tissue engineering, and applications in treating heart disease, diabetes, and other chronic conditions.',
+          category: 'Regenerative Medicine',
+          tags: ['regenerative medicine', 'stem cells', 'treatment'],
+          date: '01/12/2024',
+          readTime: '8 min read',
+        },
+        {
+          id: 3,
+          title: 'Nutrition for Children: A Comprehensive Guide',
+          excerpt:
+            'Proper nutrition in the early years is the foundation for healthy child development. Learn about essential nutrients and appropriate meal plans.',
+          content:
+            'Children\'s nutrition is an important topic that all parents need to pay attention to. This article provides detailed guidance on essential nutrients for children of different ages, how to build a balanced meal plan, and food safety considerations.',
+          category: 'Pediatrics',
+          tags: ['pediatrics', 'nutrition', 'health'],
+          date: '01/10/2024',
+          readTime: '6 min read',
+        },
+        {
+          id: 4,
+          title: 'Preventing Diabetes: Healthy Lifestyle',
+          excerpt:
+            'Type 2 diabetes can be prevented through a healthy lifestyle. Learn about diet, exercise, and healthy habits.',
+          content:
+            'Diabetes is a chronic disease that is rapidly increasing. However, many cases of type 2 diabetes can be prevented by maintaining a healthy lifestyle. This article will guide you on appropriate diet, exercise programs, and lifestyle habits that help reduce the risk of disease.',
+          category: 'Endocrinology',
+          tags: ['diabetes', 'prevention', 'nutrition'],
+          date: '01/08/2024',
+          readTime: '7 min read',
+        },
+        {
+          id: 5,
+          title: 'Cancer Screening: When and How?',
+          excerpt:
+            'Regular cancer screening is the best way to detect early and treat effectively. Learn about common screening methods and recommended schedules.',
+          content:
+            'Cancer screening is an important part of preventive healthcare. This article will explain the importance of screening, common methods such as blood tests, X-rays, and endoscopy, along with recommended schedules for each type of cancer.',
+          category: 'General Health',
+          tags: ['cancer', 'prevention', 'health'],
+          date: '01/05/2024',
+          readTime: '9 min read',
+        },
+        {
+          id: 6,
+          title: 'Mental Health: Caring for Mental Well-being',
+          excerpt:
+            'Mental health is an inseparable part of overall health. Learn about warning signs and how to care for mental health.',
+          content:
+            'Mental health plays an important role in our lives. This article will discuss common mental health issues, how to recognize warning signs, and self-care methods as well as when to seek professional help.',
+          category: 'Mental Health',
+          tags: ['mental health', 'health', 'prevention'],
+          date: '01/03/2024',
+          readTime: '6 min read',
+        },
+      ],
+    },
+    faq: {
+      title: 'Frequently Asked Questions',
+      subtitle: 'Find answers to common questions',
+      items: [
+        {
+          question: 'How to make an appointment?',
+          answer:
+            'You can make an appointment by filling out the contact form on the website, calling directly, or using the chat widget in the bottom right corner of the screen.',
+        },
+        {
+          question: 'Does the doctor examine outside of office hours?',
+          answer:
+            'Yes, the doctor offers 24/7 consultation services. You can contact via phone or chat widget at any time.',
+        },
+        {
+          question: 'Does the doctor accept health insurance?',
+          answer:
+            'Yes, we accept most types of health insurance. Please contact us for more details.',
+        },
+        {
+          question: 'How long does a medical examination take?',
+          answer:
+            'The examination time usually ranges from 30-60 minutes depending on the health condition and needs of the patient.',
+        },
+        {
+          question: 'Can I book an online appointment?',
+          answer:
+            'Yes, we support online consultation via video call. You can book an appointment and choose the online consultation option.',
+        },
+      ],
+    },
+    error: {
+      notFound: {
+        title: 'Page Not Found',
+        description:
+          'Sorry, the page you are looking for does not exist or has been moved.',
+        home: 'Go Home',
+        back: 'Go Back',
       },
     },
     footer: {
