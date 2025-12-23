@@ -6,8 +6,8 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 export const metadata: Metadata = {
-  title: 'Dr. Profile - Bác Sĩ Chuyên Khoa',
-  description: 'Portfolio chuyên nghiệp của bác sĩ',
+  title: 'Bác Sĩ Quách Thùy Linh - Bác Sĩ Chuyên Khoa',
+  description: 'Portfolio chuyên nghiệp của Bác Sĩ Quách Thùy Linh',
 }
 
 export default function RootLayout({

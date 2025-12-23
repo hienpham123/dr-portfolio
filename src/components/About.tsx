@@ -62,9 +62,12 @@ export default function About() {
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div className="bg-gradient-to-br from-primary-100 to-medical-100 rounded-2xl p-8 h-full">
-              <h3 className="text-3xl font-bold text-gray-900 mb-6">
-                Bác Sĩ Chuyên Khoa
+              <h3 className="text-3xl font-bold text-gray-900 mb-4">
+                Bác Sĩ Quách Thùy Linh
               </h3>
+              <p className="text-lg text-primary-600 font-semibold mb-6">
+                Bác Sĩ Chuyên Khoa
+              </p>
               <p className="text-gray-700 leading-relaxed mb-4">
                 Với hơn 15 năm kinh nghiệm trong lĩnh vực y tế, tôi đã điều trị
                 thành công hàng nghìn bệnh nhân với các tình trạng sức khỏe
@@ -76,9 +79,16 @@ export default function About() {
                 tốt nhất. Phương pháp điều trị của tôi luôn được cá nhân hóa
                 dựa trên nhu cầu và tình trạng cụ thể của từng người.
               </p>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-700 leading-relaxed mb-4">
                 Ngoài công việc lâm sàng, tôi còn tham gia nghiên cứu và giảng
                 dạy để chia sẻ kiến thức với thế hệ bác sĩ trẻ.
+              </p>
+              <p className="text-gray-700 leading-relaxed">
+                Với niềm đam mê marketing và truyền thông, tôi đã phát triển
+                chuyên môn trong lĩnh vực content marketing y tế. Hiện tại, tôi
+                đang phụ trách chiến lược marketing và content cho hệ thống y
+                tế Mescells - đơn vị tiên phong về y học tái tạo và trị liệu tế
+                bào tại Việt Nam.
               </p>
             </div>
           </motion.div>

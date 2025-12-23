@@ -8,6 +8,7 @@ const navItems = [
   { name: 'Trang Chủ', href: '#home' },
   { name: 'Giới Thiệu', href: '#about' },
   { name: 'Dịch Vụ', href: '#services' },
+  { name: 'Marketing', href: '#marketing' },
   { name: 'Kinh Nghiệm', href: '#experience' },
   { name: 'Liên Hệ', href: '#contact' },
 ]
@@ -48,7 +49,7 @@ export default function Header() {
           >
             <Stethoscope className="w-8 h-8 text-primary-600" />
             <span className="text-xl font-bold text-gray-900">
-              Dr. Profile
+              BS. Quách Thùy Linh
             </span>
           </motion.div>
 

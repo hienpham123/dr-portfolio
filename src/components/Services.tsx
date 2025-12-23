@@ -12,6 +12,8 @@ import {
   Activity,
   Microscope,
   Pill,
+  Megaphone,
+  PenTool,
 } from 'lucide-react'
 
 const services = [
@@ -70,6 +72,20 @@ const services = [
     description:
       'Tư vấn về thuốc và liệu pháp điều trị phù hợp',
     color: 'from-indigo-500 to-indigo-600',
+  },
+  {
+    icon: Megaphone,
+    title: 'Content Marketing',
+    description:
+      'Sáng tạo nội dung y tế, chiến lược marketing cho bệnh viện và phòng khám',
+    color: 'from-pink-500 to-pink-600',
+  },
+  {
+    icon: PenTool,
+    title: 'Medical Writing',
+    description:
+      'Viết bài khoa học, báo cáo y tế và tài liệu chuyên môn',
+    color: 'from-teal-500 to-teal-600',
   },
 ]
 

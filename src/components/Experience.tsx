@@ -7,6 +7,20 @@ import { Calendar, MapPin, Award } from 'lucide-react'
 
 const experiences = [
   {
+    year: '2020 - Hiện tại',
+    position: 'Content & Marketing Manager',
+    hospital: 'Hệ thống y tế Mescells',
+    location: 'Hà Nội',
+    description:
+      'Phụ trách chiến lược content marketing và digital marketing cho hệ thống y tế chuyên sâu về y học tái tạo và trị liệu tế bào',
+    achievements: [
+      'Xây dựng và quản lý nội dung website mescells.com',
+      'Sáng tạo 200+ bài viết về công nghệ tế bào gốc',
+      'Tăng trưởng traffic website 300% trong 2 năm',
+      'Quản lý các kênh social media và community',
+    ],
+  },
+  {
     year: '2018 - Hiện tại',
     position: 'Bác Sĩ Trưởng Khoa',
     hospital: 'Bệnh Viện Đa Khoa Trung Ương',

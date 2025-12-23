@@ -15,6 +15,7 @@ const footerLinks = {
     { name: 'Trang Chủ', href: '#home' },
     { name: 'Giới Thiệu', href: '#about' },
     { name: 'Dịch Vụ', href: '#services' },
+    { name: 'Marketing', href: '#marketing' },
     { name: 'Kinh Nghiệm', href: '#experience' },
   ],
   services: [
@@ -46,11 +47,11 @@ export default function Footer() {
           >
             <div className="flex items-center gap-2 mb-4">
               <Stethoscope className="w-8 h-8 text-primary-400" />
-              <span className="text-xl font-bold text-white">Dr. Profile</span>
+              <span className="text-xl font-bold text-white">BS. Quách Thùy Linh</span>
             </div>
             <p className="text-sm mb-4 leading-relaxed">
-              Chăm sóc sức khỏe của bạn với sự tận tâm và chuyên nghiệp. Chúng
-              tôi cam kết mang đến dịch vụ y tế chất lượng cao nhất.
+              Chăm sóc sức khỏe của bạn với sự tận tâm và chuyên nghiệp. Bác sĩ
+              Quách Thùy Linh cam kết mang đến dịch vụ y tế chất lượng cao nhất.
             </p>
             <div className="flex gap-4">
               {socialLinks.map((social) => {
@@ -144,7 +145,7 @@ export default function Footer() {
 
         <div className="border-t border-gray-800 pt-8 text-center text-sm">
           <p>
-            © {currentYear} Dr. Profile. Tất cả quyền được bảo lưu. | Được tạo
+            © {currentYear} Bác Sĩ Quách Thùy Linh. Tất cả quyền được bảo lưu. | Được tạo
             với ❤️ để chăm sóc sức khỏe cộng đồng
           </p>
         </div>

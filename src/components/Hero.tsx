@@ -4,6 +4,7 @@ import { useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { ArrowDown, Calendar, Clock, MapPin } from 'lucide-react'
 import MedicalScene from './ThreeJS/MedicalScene'
+import AnimatedNumber from './AnimatedNumber'
 
 export default function Hero() {
   const containerRef = useRef<HTMLDivElement>(null)
@@ -49,9 +50,9 @@ export default function Hero() {
               transition={{ delay: 0.3 }}
               className="text-5xl md:text-7xl font-bold text-gray-900 mb-6"
             >
-              Chăm Sóc Sức Khỏe
+              Bác Sĩ
               <br />
-              <span className="text-primary-600">Chuyên Nghiệp</span>
+              <span className="text-primary-600">Quách Thùy Linh</span>
             </motion.h1>
 
             <motion.p
@@ -137,7 +138,7 @@ export default function Hero() {
                 className="bg-white/90 backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow"
               >
                 <div className="text-4xl font-bold text-primary-600 mb-2">
-                  {stat.number}
+                  <AnimatedNumber value={stat.number} duration={2000} />
                 </div>
                 <div className="text-sm text-gray-600">{stat.label}</div>
               </motion.div>
